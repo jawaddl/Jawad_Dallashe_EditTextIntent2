@@ -9,7 +9,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/title"
         android:layout_width="289dp"
         android:layout_height="64dp"
         android:layout_marginStart="50dp"
@@ -25,7 +25,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextNumber3"
+        android:id="@+id/BX"
         android:layout_width="122dp"
         android:layout_height="62dp"
         android:layout_marginTop="111dp"
@@ -38,13 +38,13 @@
         android:textColorHint="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/editTextNumber4"
+        app:layout_constraintEnd_toStartOf="@+id/CX"
         app:layout_constraintHorizontal_bias="0.857"
-        app:layout_constraintStart_toEndOf="@+id/editTextNumber5"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintStart_toEndOf="@+id/AX"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
 
     <EditText
-        android:id="@+id/editTextNumber4"
+        android:id="@+id/CX"
         android:layout_width="122dp"
         android:layout_height="62dp"
         android:layout_marginTop="111dp"
@@ -58,10 +58,10 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/title" />
 
     <EditText
-        android:id="@+id/editTextNumber5"
+        android:id="@+id/AX"
         android:layout_width="122dp"
         android:layout_height="62dp"
         android:layout_marginStart="4dp"
@@ -75,33 +75,36 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/title" />
 
     <Button
         android:id="@+id/Randomer"
         android:layout_width="160dp"
-        android:layout_height="72dp"
+        android:layout_height="75dp"
+        android:onClick="random_nun"
         android:text="random numbers"
         android:textAlignment="center"
-        android:textSize="22sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.679" />
+        app:layout_constraintVertical_bias="0.678" />
 
     <Button
         android:id="@+id/calculation"
         android:layout_width="160dp"
-        android:layout_height="72dp"
-        android:layout_marginTop="50dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="48dp"
+        android:onClick="calculation"
         android:text="calculate"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Randomer" />
 
@@ -113,13 +116,22 @@
         android:text="Delete all number"
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="20sp"
+        android:textSize="23sp"
         android:textStyle="bold"
+        android:onClick="Delete"
         app:layout_constraintBottom_toTopOf="@+id/Randomer"
         app:layout_constraintEnd_toEndOf="@+id/Randomer"
         app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="@+id/Randomer"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber3"
-        app:layout_constraintVertical_bias="0.272"
+        app:layout_constraintTop_toBottomOf="@+id/BX"
+        app:layout_constraintVertical_bias="0.281"
         app:rippleColor="#000000" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="2dp"
+        android:layout_height="33dp"
+        app:layout_constraintEnd_toEndOf="@+id/title"
+        app:layout_constraintStart_toStartOf="@+id/title"
+        tools:layout_editor_absoluteY="168dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
