@@ -18,16 +18,17 @@ public class MainActivity2 extends AppCompatActivity
     TextView display;
     ImageView start_parabola;
     Button back;
-    Intent gi = getIntent();
     private float AX,BX,CX;
     float firstSum ;
     String solution1,solution2;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main2);
+        Intent GH = getIntent();
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -38,9 +39,9 @@ public class MainActivity2 extends AppCompatActivity
             start_parabola=findViewById(R.id.start_parabola);
             back=findViewById(R.id.back);
 
-            AX=gi.getFloatExtra("a",0);
-            BX=gi.getFloatExtra("b",0);
-            CX=gi.getFloatExtra("c",0);
+            AX=GH.getFloatExtra("a",0);
+            BX=GH.getFloatExtra("b",0);
+            CX=GH.getFloatExtra("c",0);
 
             firstSum=BX*BX-4*AX*CX;
 
