@@ -58,8 +58,8 @@ public class MainActivity extends AppCompatActivity
     }
     public static int get_randNum()
     {
-        Random randomNumber = new Random();
-        return (int)(Math.random() * 199 + -111);
+        Random random= new Random();
+        return (int)(Math.random() * 89 + -60);
     }
 
     public void random_nun(View view)
@@ -93,7 +93,6 @@ public class MainActivity extends AppCompatActivity
                 AX.setText("");
                 BX.setText("");
                 CX.setText("");
-                title.setText("");
             }
 
   }

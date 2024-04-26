@@ -3,6 +3,7 @@ package com.example.jawad_dallashe_edittextintent;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -16,8 +17,8 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity2 extends AppCompatActivity
 {
     TextView display;
-    ImageView start_parabola;
-    Button back;
+    ImageView xxx;
+    Button Back, Exit ;
     private float AX,BX,CX;
     float firstSum ;
     String solution1,solution2;
@@ -29,63 +30,81 @@ public class MainActivity2 extends AppCompatActivity
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main2);
         Intent GH = getIntent();
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) ->
+        {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
-        });
+        }
+        );
 
             display=findViewById(R.id.display);
-            start_parabola=findViewById(R.id.start_parabola);
-            back=findViewById(R.id.back);
+            xxx=findViewById(R.id.xxx);
+            Back = findViewById(R.id.Back);
+            Exit = findViewById(R.id.Exit);
 
             AX=GH.getFloatExtra("a",0);
             BX=GH.getFloatExtra("b",0);
             CX=GH.getFloatExtra("c",0);
 
-            firstSum=BX*BX-4*AX*CX;
+            Back.setBackgroundColor(Color.rgb(3, 252, 207));
+            Exit.setBackgroundColor(Color.rgb(3, 252, 207));
 
-            back.setBackgroundColor(Color.rgb(3, 252, 207));
-
+            firstSum=(float) (BX*BX-4*AX*CX);
             if (firstSum==0 && AX>0)
             {
-                start_parabola.setImageResource(R.drawable.s);
+                xxx.setImageResource(R.drawable.s);
             }
             if (firstSum>0 && AX>0)
             {
-                start_parabola.setImageResource(R.drawable.sminos);
+                xxx.setImageResource(R.drawable.sminos);
             }
             if (firstSum<0 && AX>0)
             {
-                start_parabola.setImageResource(R.drawable.splus);
+                xxx.setImageResource(R.drawable.splus);
             }
             if (firstSum==0 && AX<0)
             {
-                start_parabola.setImageResource(R.drawable.ans);
+                xxx.setImageResource(R.drawable.ans);
             }
             if (firstSum>0 && AX<0)
             {
-                start_parabola.setImageResource(R.drawable.ansplus);
+                xxx.setImageResource(R.drawable.ansplus);
             }
             if (firstSum<0 && AX<0)
             {
-                start_parabola.setImageResource(R.drawable.ansminos);
+                xxx.setImageResource(R.drawable.ansminos);
             }
-            if (firstSum==0)
+
+
+            if(firstSum>0)
             {
-                solution1=(Float.valueOf(-BX)+Math.sqrt(firstSum))/(2*AX)+"";
-                solution2="no solution";
+               solution1 = (Double.valueOf(-BX)-Math.sqrt(firstSum))/(2*AX)+"";
+               solution2 = (Double.valueOf(-BX)-Math.sqrt(firstSum))/(2*AX)+"";
             }
-            if (firstSum>0)
+            else if (firstSum < 0)
             {
-                solution1=(Float.valueOf(-BX)+Math.sqrt(firstSum))/(2*AX)+"";
-                solution2=(Float.valueOf(-BX)-Math.sqrt(firstSum))/(2*AX)+"";
+                solution1 = "No Solution";
+                solution2 = "No Solution";
             }
-            if (firstSum<0)
+            else
             {
-                solution1="no solution";
-                solution2="no solution";
+                solution1 = (Double.valueOf(-BX)+Math.sqrt(firstSum))/(2*AX)+"";
+                solution2 = "No Solution";
             }
             display.setText("X1="+solution1+" , "+"X2="+solution2);
-        }
     }
+
+    public void back(View view)
+    {
+        Intent si = new Intent(MainActivity2.this, MainActivity.class);
+        si.putExtra("X1", solution1);
+        si.putExtra("X2", solution2);
+        si.putExtra("a",AX);
+        si.putExtra("b",BX);
+        si.putExtra("c",CX);
+        startActivity(si);
+    }
+
+    public void Exit(View view) {display.setText(hashCode());}
+}
