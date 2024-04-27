@@ -23,7 +23,6 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity
 {
-    Random rnd=new Random();
     private Button Randomer, calculation, Delete;
     private EditText AX, BX, CX;
     double numA, numB, numC;
@@ -59,7 +58,7 @@ public class MainActivity extends AppCompatActivity
     public static int get_randNum()
     {
         Random random= new Random();
-        return (int)(Math.random() * 89 + -60);
+        return (int)(Math.random() * 199 + -99);
     }
 
     public void random_nun(View view)

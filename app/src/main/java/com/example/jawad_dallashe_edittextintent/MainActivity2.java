@@ -19,7 +19,7 @@ public class MainActivity2 extends AppCompatActivity
     TextView display;
     ImageView xxx;
     Button Back, Exit ;
-    private float AX,BX,CX;
+    Double AX,BX,CX;
     float firstSum ;
     String solution1,solution2;
 
@@ -43,10 +43,9 @@ public class MainActivity2 extends AppCompatActivity
             Back = findViewById(R.id.Back);
             Exit = findViewById(R.id.Exit);
 
-            AX=GH.getFloatExtra("a",0);
-            BX=GH.getFloatExtra("b",0);
-            CX=GH.getFloatExtra("c",0);
-
+            AX=GH.getDoubleExtra("a",0);
+            BX=GH.getDoubleExtra("b",0);
+            CX=GH.getDoubleExtra("c",0);
             Back.setBackgroundColor(Color.rgb(3, 252, 207));
             Exit.setBackgroundColor(Color.rgb(3, 252, 207));
 
@@ -77,34 +76,42 @@ public class MainActivity2 extends AppCompatActivity
             }
 
 
+            if (firstSum==0)
+            {
+               solution1 = (Double.valueOf(-BX)+Math.sqrt(firstSum))/(2*AX)+"";
+               solution2="no solution";
+            }
+            if (AX == 0)
+            {
+                xxx.setImageResource(R.drawable.line);
+            }
+
+
             if(firstSum>0)
             {
-               solution1 = (Double.valueOf(-BX)-Math.sqrt(firstSum))/(2*AX)+"";
+               solution1 = (Double.valueOf(-BX)+Math.sqrt(firstSum))/(2*AX)+"";
                solution2 = (Double.valueOf(-BX)-Math.sqrt(firstSum))/(2*AX)+"";
             }
             else if (firstSum < 0)
             {
-                solution1 = "No Solution";
-                solution2 = "No Solution";
+                xxx.setImageResource(R.drawable.xxx);
+                solution1 = "Error";
+                solution2 = "Error";
             }
-            else
+            if (AX==null && BX==null && CX==null)
             {
-                solution1 = (Double.valueOf(-BX)+Math.sqrt(firstSum))/(2*AX)+"";
-                solution2 = "No Solution";
+                solution1 = "Error";
+                solution2 = "Error";
             }
             display.setText("X1="+solution1+" , "+"X2="+solution2);
     }
 
     public void back(View view)
     {
-        Intent si = new Intent(MainActivity2.this, MainActivity.class);
-        si.putExtra("X1", solution1);
-        si.putExtra("X2", solution2);
-        si.putExtra("a",AX);
-        si.putExtra("b",BX);
-        si.putExtra("c",CX);
-        startActivity(si);
+
     }
 
-    public void Exit(View view) {display.setText(hashCode());}
+    public void Exit(View view) {
+        display.setText(hashCode());
+    }
 }

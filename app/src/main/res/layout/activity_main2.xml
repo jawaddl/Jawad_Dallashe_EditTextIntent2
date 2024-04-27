@@ -12,13 +12,13 @@
         android:id="@+id/display"
         android:layout_width="350dp"
         android:layout_height="99dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="72dp"
         android:text="display"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,33 +28,33 @@
         android:layout_height="85dp"
         android:layout_marginBottom="48dp"
         android:onClick="back"
-        android:text="Back"
+        android:text="Delete and back"
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="25sp"
+        android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.11"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/display"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.929" />
 
     <Button
         android:id="@+id/Exit"
         android:layout_width="140dp"
         android:layout_height="85dp"
         android:onClick="Exit"
-        android:text="Exit the app"
+        android:text="Restore old data"
         android:textColor="#000000"
-        android:textSize="24sp"
+        android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.885"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.925" />
+        app:layout_constraintVertical_bias="0.879" />
 
     <ImageView
         android:id="@+id/xxx"
@@ -64,8 +64,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/display"
-        app:layout_constraintVertical_bias="0.239"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498"
         app:srcCompat="@drawable/xxx" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
