@@ -108,9 +108,10 @@ public class MainActivity2 extends AppCompatActivity
 
     public void back(View view)
     {
-
+        Intent intent = new Intent(MainActivity2.this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
-
     public void Exit(View view) {
         display.setText(hashCode());
     }
